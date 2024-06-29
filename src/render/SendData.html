@@ -1,0 +1,268 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News Article Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Custom styles can be added here */
+    html, body {
+      height: 100%;
+    }
+  
+    .form-container {
+      max-width: 400px;
+      width: 100%;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .input-field {
+      width: calc(100% - 60px);
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+
+  <div id="navbar-container"></div>
+
+  <script>
+    // تحميل محتوى nav.html داخل العنصر الفارغ
+    fetch('../componet/nav.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-container').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading navbar:', error));
+  </script>
+  
+
+  <div class=" flex justify-center items-center">
+    <form id="news-form" action="#" method="POST">
+      <div class="mb-6"><br/><br/><br/>
+        <img src="../static/image/bbbb.jpeg" alt="صورة مثال" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+      </div>
+      <div class="flex mb-4">
+        <input id="title" name="title" type="text" placeholder="عنوان الخبر الجديد" class="input-field py-2 px-4 border border-gray-300 rounded-l">
+        <label for="title" class="py-2 px-2 bg-blue-500 text-white rounded-r">عنوان الخبر</label>
+      </div>
+      <div class="flex mb-4">
+        <input id="tobic" name="tobic" type="text" placeholder="موضوع الخبر" class="input-field py-2 px-4 border border-gray-300 rounded-l">
+        <label for="tobic" class="py-2 px-2 bg-blue-500 text-white rounded-r">تسجيل الخبر</label>
+      </div>
+      <div class="flex mb-4">
+        <input id="place" name="place" type="text" placeholder="مكان الخبر" class="input-field py-2 px-4 border border-gray-300 rounded-l">
+        <label for="place" class="py-2 px-2 bg-blue-500 text-white rounded-r">مكان الحدث</label>
+      </div>
+      <button type="submit" class="w-full py-2 px-4 bg-blue-500 text-white rounded">نشر الخبر</button>
+    </form>
+  </div>
+
+  <script src="../../server/articalNews.js" defer></script>
+
+</body>
+</html> -->
+
+<!-- 
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Data to Projects</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
+    <div class="relative py-3 sm:max-w-xl sm:mx-auto">
+        <div class="relative px-4 py-10 bg-white mx-8 md:mx-0 shadow rounded-3xl sm:p-10">
+            <div class="max-w-md mx-auto">
+                <div class="flex items-center space-x-5">
+                    <div class="h-14 w-14 bg-gray-200 rounded-full flex flex-shrink-0 justify-center items-center text-gray-500 text-2xl font-mono"><img src="image/IMAGE.jpg" alt="Project"></div>
+                    <div class="block pl-2 font-semibold text-xl self-start text-gray-700">
+                        <h2 class="leading-relaxed">Send Data to projects</h2>
+                        <p class="text-sm text-gray-500 font-normal leading-relaxed">Fill in the details below to send data to the API.</p>
+                    </div>
+                </div>
+                <form id="news-form" enctype="multipart/form-data" class="mt-8">
+                    <div class="relative border-b-2 focus-within:border-blue-500 focus-within:text-blue-500">
+                        <input type="text" name="projectName" id="projectName" class="pb-2 border-b-2 appearance-none focus:outline-none focus:border-blue-500 block w-full px-2 py-2 bg-transparent" placeholder="Project Name" />
+                    </div>
+                    <div class="mt-8">
+                        <textarea name="description" id="description" class="pb-2 border-b-2 appearance-none focus:outline-none focus:border-blue-500 block w-full px-2 py-2 bg-transparent" placeholder="Description"></textarea>
+                    </div>
+                    <div class="relative mt-8">
+                        <input type="text" name="projectLink" id="projectLink" class="pb-2 border-b-2 appearance-none focus:outline-none focus:border-blue-500 block w-full px-2 py-2 bg-transparent" placeholder="Project Link" />
+                    </div>
+                    <div class="mt-8">
+                        <input type="file" name="images" id="images" class="pb-2 border-b-2 appearance-none focus:outline-none focus:border-blue-500 block w-full px-2 py-2 bg-transparent" />
+                    </div>
+                    <div class="mt-8">
+                        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600 w-full">Send Data</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../server/articalNews.js" defer></script>
+</body>
+</html> -->
+
+
+<!-- 
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Electron Form App</title>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #ecf0f1;
+      }
+      input, textarea {
+        margin-bottom: 20px;
+        padding: 10px;
+        width: 300px;
+        border: 1px solid gray;
+      }
+      button {
+        padding: 10px 20px;
+        background-color: #3498db;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Send Data to API</h1>
+      <input id="projectName" type="text" placeholder="Project Name" />
+      <textarea id="description" placeholder="Description"></textarea>
+      <input id="projectLink" type="text" placeholder="Project Link" />
+      <div class="mt-8">
+        <input type="file" name="images" id="images" class="pb-2 border-b-2 appearance-none focus:outline-none focus:border-blue-500 block w-full px-2 py-2 bg-transparent" />
+    </div>
+      <button onclick="handleSubmit()">Send Data</button>
+    </div>
+    <script>
+      const API_URL = 'https://node-js-backend-personal-portfolio.onrender.com/api';
+
+      async function handleSubmit() {
+        const formData = {
+          projectName: document.getElementById('projectName').value,
+          description: document.getElementById('description').value,
+          projectLink: document.getElementById('projectLink').value,
+          images: document.getElementById('images').value
+        };
+
+        try {
+          const response = await fetch(API_URL, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+          });
+
+          if (response.status === 200) {
+            alert('Success', 'Data submitted successfully!');
+            document.getElementById('projectName').value = '';
+            document.getElementById('description').value = '';
+            document.getElementById('projectLink').value = '';
+            document.getElementById('images').value = '';
+          } else {
+            throw new Error('Failed to submit data');
+          }
+        } catch (error) {
+          console.error('Error submitting data:', error);
+          alert('Error', 'An error occurred while submitting the data. Please try again!');
+        }
+      }
+    </script>
+  </body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>Electron Form App</title>
+    <script src="../../server/articalNews.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  </head>
+  <body class="flex items-center justify-center h-screen bg-gray-100">
+    <div class="container max-w-lg mx-auto p-6 bg-white shadow-md rounded-md">
+      <h1 class="text-2xl font-bold mb-4">Send Data to API</h1>
+      <input id="projectName" type="text" placeholder="Project Name" class="w-full p-2 border mb-4" />
+      <textarea id="description" placeholder="Description" class="w-full p-2 border mb-4"></textarea>
+      <input id="projectLink" type="text" placeholder="Project Link" class="w-full p-2 border mb-4" />
+      <div class="mb-4">
+        <input type="file" name="images" id="images" class="w-full p-2 border" />
+      </div>
+      <button onclick="handleSubmit()" class="w-full p-2 bg-blue-500 text-white">Send Data</button>
+    </div>
+  </body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Electron Form App</title>
+    <script src="../../server/articalNews.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!-- الخصايص هذا حق  اشارة التحميل -->
+  <style>
+      .loader {
+        border: 4px solid rgba(0, 0, 0, 0.1);
+        border-left-color: #3498db;
+        animation: spin 1s linear infinite;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        margin-left: 6px;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
+    
+  </head>
+  <body >
+        <!-- Navbar -->
+<div id="navbar-container"></div>
+<script>
+  fetch('../componet/nav.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('navbar-container').innerHTML = data;
+    })
+    .catch(error => console.error('Error loading navbar:', error));
+</script>
+    <div class="flex items-center justify-center h-screen bg-gray-100">
+      <div class="container max-w-lg mx-auto p-6 bg-white shadow-md rounded-md">
+        <h1 class="text-2xl font-bold mb-4">Send Data to profile</h1>
+        <input id="projectName" type="text" placeholder="Project Name" class="w-full p-2 border mb-4" />
+        <textarea id="description" placeholder="Description" class="w-full p-2 border mb-4"></textarea>
+        <input id="projectLink" type="text" placeholder="Project Link" class="w-full p-2 border mb-4" />
+        <div class="mb-4">
+          <input type="file" name="images" id="images" class="w-full p-2 border" />
+        </div>
+        <div id="loader" class="hidden loader"></div>
+        <button id="submitButton" onclick="handleSubmit()" class="w-full p-2 bg-blue-500 text-white">Send Data</button>
+      </div>
+    </div>
+  </body>
+</html>

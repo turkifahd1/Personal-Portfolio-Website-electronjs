@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Electron App</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body >
+    <!-- Navbar -->
+<div id="navbar-container"></div>
+<script>
+  fetch('../componet/nav.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('navbar-container').innerHTML = data;
+    })
+    .catch(error => console.error('Error loading navbar:', error));
+</script>
+    <div class="bg-gray-100 min-h-screen flex flex-col justify-center items-center mb-96">
+      <div class="container mx-auto px-4 py-8 flex flex-col lg:flex-row items-center">
+          <div class="lg:w-1/2 flex justify-center lg:justify-end">
+              <img src="../static/image/IMAGE.jpg" class="rounded-full w-80 h-80 object-cover shadow-lg" alt="صورتك الشخصية">
+          </div>
+          <div class="lg:w-1/2 mt-8 lg:mt-0 lg:ml-8 text-center lg:text-left">
+              <h1 class="text-4xl font-bold mb-4 ml-48">قصة نجاحي</h1>
+              <p class="text-lg mb-4">
+                  مرحبًا، أنا تركي النهدي. منذ سنوات قليلة، بدأت رحلتي في عالم البرمجة والتكنولوجيا بدون أي خلفية علمية في هذا المجال.
+                  بفضل الجهد المستمر والتعلم الذاتي، استطعت تطوير مهاراتي والعمل على عدة مشاريع ناجحة.
+                  أحد أهم إنجازاتي كان تطوير تطبيق يستخدمه الآن آلاف الأشخاص حول العالم.
+                  قصتي هي دليل على أن الشغف والمثابرة يمكن أن يؤديا إلى تحقيق الأحلام، بغض النظر عن الصعوبات. ومريت الكثير من العقبات لاكن تخطيتها بالمثايرة والنجاح وكانت اخر سنه لي فترة ضياع لاتدري اين تذهب الا بعد ان طبقت في شركة smart Ginx
+              </p>
+              <a href="project.html">
+                  <button class="bg-blue-500 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-700 transition duration-300">
+                      عرض المشاريع
+                  </button>
+              </a>
+          </div>
+      </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Electron App</title>
+    <style>
+        .ticker-wrapper {
+            display: flex;
+            white-space: nowrap;
+            overflow: hidden;
+            position: relative;
+        }
+        .ticker span {
+            padding: 0 2rem;
+        }
+        .text-black {
+            color: black;
+        }
+        .overflow-hidden {
+            overflow: hidden;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .transition-opacity {
+            transition: opacity 0.5s;
+        }
+        .duration-500 {
+            transition-duration: 500ms;
+        }
+        .opacity-100 {
+            opacity: 1;
+        }
+        .opacity-0 {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.production.min.js"></script>
+
+    <script>
+        const { useEffect, useRef, useState } = React;
+
+        const Ticker = ({ textList }) => {
+            const [currentTextIndex, setCurrentTextIndex] = useState(0);
+            const tickerRef = useRef(null);
+
+            useEffect(() => {
+                const ticker = tickerRef.current;
+                const tickerWidth = ticker.scrollWidth;
+                let currentScroll = 0;
+                const speed = 1; // Adjust speed here
+                const interval = 50; // Adjust interval time here
+
+                function animateTicker() {
+                    currentScroll += speed;
+                    if (currentScroll >= tickerWidth) {
+                        currentScroll = 0;
+                    }
+                    ticker.scrollLeft = currentScroll;
+                }
+
+                const tickerInterval = setInterval(animateTicker, interval);
+
+                return () => clearInterval(tickerInterval);
+            }, []);
+
+            useEffect(() => {
+                const interval = setInterval(() => {
+                    setCurrentTextIndex((prevIndex) => (prevIndex + 1) % textList.length);
+                }, 3000); // Change the text every 3 seconds
+
+                return () => clearInterval(interval);
+            }, [textList.length]);
+
+            return (
+                <div className="w-full text-black overflow-hidden text-center">
+                    <div ref={tickerRef} className="ticker-wrapper">
+                        <div className="ticker">
+                            {textList.map((text, index) => (
+                                <span
+                                    key={index}
+                                    className={`transition-opacity duration-500 ${index === currentTextIndex ? 'opacity-100' : 'opacity-0'}`}
+                                >
+                                    {text}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        const App = () => {
+            const textList = ["نص 1", "نص 2", "نص 3"];
+            return <Ticker textList={textList} />;
+        };
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>
